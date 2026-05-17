@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiss Digital Vibe</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+</head>
+<body class="mode-digital">
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Johnathan Peirce</p>
+      <h1>Custom Initial PFP Maker</h1>
+      <p class="subtitle">
+        Create a custom swiss style or Marathon inspired pfp!
+      </p>
+    </section>
+
+    <section class="layout">
+      <aside class="controls-panel">
+        <div class="control-group">
+          <h2>Core Setup</h2>
+
+          <label>
+            Letters
+            <input id="letters" maxlength="3" value="AB" />
+          </label>
+
+          <label>
+            Style Mode
+            <select id="styleMode">
+              <option value="digital">Digital Style</option>
+              <option value="swiss">Swiss Style</option>
+            </select>
+          </label>
+
+          <label>
+            Canvas Shape
+            <select id="canvasShape">
+              <option value="circle">Circle</option>
+              <option value="square">Square</option>
+              <option value="rectangle">Rectangle</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="control-group">
+          <h2>Shared Colors</h2>
+
+          <label>
+            Main Letter / Symbol Color
+            <input id="color" type="color" value="#ccff00" />
+          </label>
+
+          <label>
+            Canvas Background Color
+            <input id="bgColor" type="color" value="#10140f" />
+          </label>
+
+          <label>
+            Canvas Border Color
+            <input id="borderColor" type="color" value="#ccff00" />
+          </label>
+
+          <button id="matchBorder" type="button">Match Border to Main Color</button>
+        </div>
+
+        <div class="control-group">
+          <h2>Canvas Frame</h2>
+
+          <label>
+            Border Thickness
+            <input id="borderThickness" type="range" min="0" max="30" value="6" />
+          </label>
+
+          <label>
+            Letter Size
+            <input id="letterSize" type="range" min="35" max="140" value="70" />
+          </label>
+        </div>
+
+        <div class="control-group digital-control">
+          <h2>Digital Style</h2>
+
+          <label>
+            Digital Pattern
+            <select id="digitalPattern">
+              <option value="symbols">Shape Glyphs</option>
+              <option value="triangles">Jagged Triangles</option>
+            </select>
+          </label>
+
+          <label>
+            Large Shape Amount
+            <input id="intensity" type="range" min="0" max="100" value="55" />
+          </label>
+
+          <label>
+            Background Symbol Noise
+            <input id="bgIntensity" type="range" min="0" max="100" value="50" />
+          </label>
+
+          <label>
+            Letter Edge Messiness
+            <input id="messiness" type="range" min="0" max="100" value="30" />
+          </label>
+        </div>
+
+        <div class="control-group swiss-control">
+          <h2>Swiss Layout</h2>
+
+          <label class="checkbox-row">
+            <input id="prioritizeLetters" type="checkbox" checked />
+            Prioritize Letters
+          </label>
+
+          <label>
+            Swiss Background Style
+            <select id="swissBgStyle">
+              <option value="posterBlocks">Poster Blocks</option>
+              <option value="radialTarget">Radial Target</option>
+              <option value="diagonalSystem">Diagonal System</option>
+              <option value="opArt">Op-Art Burst</option>
+              <option value="albumGrid">Album Grid</option>
+            </select>
+          </label>
+
+          <label>
+            Swiss Background Opacity
+            <input id="swissBgOpacity" type="range" min="10" max="100" value="72" />
+          </label>
+
+          <label>
+            Swiss Font
+            <select id="swissFont">
+              <option value="arialBlack">Bold Grotesk</option>
+              <option value="helvetica">Clean Helvetica</option>
+              <option value="georgia">Editorial Serif</option>
+            </select>
+          </label>
+
+          <label>
+            Letter Overlap
+            <input id="overlap" type="range" min="0" max="100" value="55" />
+          </label>
+
+          <label>
+            Letter Vertical Split
+            <input id="letterVerticalSplit" type="range" min="-100" max="100" value="0" />
+          </label>
+
+          <label>
+            Blur Amount
+            <input id="blurAmount" type="range" min="0" max="30" value="4" />
+          </label>
+
+          <label>
+            Blur Direction
+            <select id="blurDirection">
+              <option value="vertical">Vertical</option>
+              <option value="horizontal">Horizontal</option>
+              <option value="diagonal">Diagonal</option>
+            </select>
+          </label>
+
+          <button id="randomizeSwiss" type="button">Randomize Swiss</button>
+        </div>
+
+        <div class="control-group swiss-control">
+          <h2>Swiss Accent Colors</h2>
+
+          <label>
+            Accent 1
+            <input id="accentOne" type="color" value="#ccff00" />
+          </label>
+
+          <label>
+            Accent 2
+            <input id="accentTwo" type="color" value="#ff2f5f" />
+          </label>
+
+          <label>
+            Accent 3
+            <input id="accentThree" type="color" value="#24d8d2" />
+          </label>
+        </div>
+
+        <div class="control-group actions">
+          <button id="generate">Generate</button>
+          <button id="download">Download PNG</button>
+        </div>
+      </aside>
+
+      <section id="outputWrap">
+        <div id="svgPreview"></div>
+        <canvas id="pngCanvas"></canvas>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+  <footer>Johnathan Peirce © StyleLike 2026</footer>
+</body>
+</html>

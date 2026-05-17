@@ -1,0 +1,173 @@
+.app {
+  width: min(1480px, 96vw);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  max-width: 850px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.controls-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.control-group {
+  padding: 18px;
+}
+
+.control-group h2 {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  border-radius: 2px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+input[type="color"] {
+  height: 42px;
+  padding: 3px;
+}
+
+input[type="range"] {
+  box-shadow: none;
+  padding-inline: 0;
+}
+
+button {
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+button:hover {
+  transform: translate(2px, 2px);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  width: auto;
+  box-shadow: none;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+}
+
+#outputWrap {
+  min-height: 700px;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  position: sticky;
+  top: 24px;
+  overflow: hidden;
+}
+
+#svgPreview {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+#svgPreview svg {
+  width: 100%;
+  max-height: 78vh;
+  display: block;
+}
+
+#pngCanvas {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  #outputWrap {
+    position: static;
+    min-height: auto;
+  }
+
+  .controls-panel {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 16px;
+  }
+
+  .hero {
+    padding: 18px;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  .controls-panel {
+    grid-template-columns: 1fr;
+  }
+}

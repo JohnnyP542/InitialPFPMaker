@@ -1,0 +1,147 @@
+body.mode-swiss {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(204, 255, 0, 0.14), transparent 20%),
+    radial-gradient(circle at 82% 14%, rgba(36, 216, 210, 0.1), transparent 22%),
+    linear-gradient(32deg, transparent 0 58%, rgba(204, 255, 0, 0.09) 58% 66%, transparent 66% 100%),
+    linear-gradient(145deg, #d8d8c7 0%, #c9d1c3 38%, #bfc8bd 70%, #dcd7c5 100%);
+}
+
+body.mode-swiss::before,
+body.mode-swiss::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.mode-swiss::before {
+  width: 360px;
+  height: 360px;
+  left: -120px;
+  bottom: 80px;
+  background: rgba(204, 255, 0, 0.12);
+  border: 2px solid rgba(0, 0, 0, 0.42);
+  transform: rotate(-14deg);
+}
+
+body.mode-swiss::after {
+  width: 520px;
+  height: 160px;
+  right: -140px;
+  top: 38%;
+  background: rgba(36, 216, 210, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.35);
+  transform: rotate(22deg);
+}
+
+body.mode-digital {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(204, 255, 0, 0.22), transparent 24%),
+    radial-gradient(circle at 82% 72%, rgba(36, 216, 210, 0.14), transparent 28%),
+    linear-gradient(135deg, #060807 0%, #10170d 42%, #050605 100%);
+  color: var(--acid);
+}
+
+body.mode-digital::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(204, 255, 0, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(204, 255, 0, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 86%);
+  z-index: -1;
+}
+
+body.mode-swiss .hero,
+body.mode-swiss .control-group,
+body.mode-swiss #outputWrap {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(238, 235, 215, 0.88),
+      rgba(218, 225, 210, 0.92)
+    );
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(20, 22, 18, 0.72);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+}
+
+body.mode-digital .hero,
+body.mode-digital .control-group,
+body.mode-digital #outputWrap {
+  background:
+    linear-gradient(145deg, rgba(10, 18, 10, 0.92), rgba(4, 8, 5, 0.96));
+  color: #d8ff3d;
+  border: 2px solid rgba(204, 255, 0, 0.72);
+  box-shadow:
+    0 0 0 1px rgba(204, 255, 0, 0.12),
+    0 18px 44px rgba(0, 0, 0, 0.42);
+}
+
+body.mode-swiss .control-group h2 {
+  border-bottom: 2px solid rgba(20, 22, 18, 0.72);
+}
+
+body.mode-digital .control-group h2 {
+  color: rgba(216, 255, 61, 0.82);
+  border-bottom: 2px solid rgba(204, 255, 0, 0.45);
+}
+
+body.mode-digital .subtitle,
+body.mode-digital label {
+  color: rgba(216, 255, 61, 0.82);
+}
+
+input,
+select,
+button {
+  background: rgba(248, 246, 231, 0.85);
+  color: var(--ink);
+  border: 2px solid rgba(20, 22, 18, 0.7);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+body.mode-digital input,
+body.mode-digital select,
+body.mode-digital button {
+  background: #071007;
+  color: #d8ff3d;
+  border-color: rgba(204, 255, 0, 0.72);
+  box-shadow: 3px 3px 0 rgba(204, 255, 0, 0.16);
+}
+
+input:focus,
+select:focus {
+  background: #ffffff;
+  border-color: var(--blue);
+}
+
+body.mode-digital input:focus,
+body.mode-digital select:focus {
+  border-color: var(--cyan);
+  background: #0c160c;
+}
+
+.eyebrow,
+#generate {
+  background: linear-gradient(90deg, var(--acid), #eaff91);
+  color: #050805;
+  border: 1px solid rgba(0, 0, 0, 0.72);
+}
+
+#download {
+  background: linear-gradient(90deg, var(--orange), #ff9a66);
+  color: #050805;
+}
+
+#matchBorder {
+  background: linear-gradient(90deg, var(--cyan), #b4fff7);
+  color: #050805;
+}
+
+input[type="range"] {
+  accent-color: var(--acid);
+}

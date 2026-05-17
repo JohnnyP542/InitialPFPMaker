@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #151714;
+  --muted: #606455;
+  --acid: #ccff00;
+  --orange: #ff6a2a;
+  --cyan: #25d9d2;
+  --blue: #3158ff;
+  --cream: #f8f6e7;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--ink);
+  font-family: "Courier New", Consolas, monospace;
+  padding: 28px;
+  position: relative;
+  background-attachment: fixed;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 14px;
+  font-size: 0.72rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
